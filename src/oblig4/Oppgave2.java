@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Oppgave2{	
 	static int teller=0;
-
+	static int metodekall = 0;
 
 	public static void main(String[] args) {			
 
@@ -16,13 +16,15 @@ public class Oppgave2{
 	    flytDisk(n, 'A', 'B', 'C');
 	    
 	    System.out.println("Total antall flyttinger : " + teller);
+	    System.out.println("Metode ble kalt " + metodekall + " ganger");
 		    
 	    input.close();
 	}
 	
-	public static void flytDisk(int n, char fraTarn, char tilTarn, char hjelpTarn) {		
+	public static void flytDisk(int n, char fraTarn, char tilTarn, char hjelpTarn) {
+		metodekall++;
 	    if (n == 1){ // Stopping condition
-	    	teller++;
+	    	teller++;	    	
 	    	System.out.println("Flyt disk " + n + " fra " + fraTarn + " til " + tilTarn);
 	    	
 	    }	    
