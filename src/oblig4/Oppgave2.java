@@ -3,6 +3,8 @@ package oblig4;
 import java.util.Scanner;
 
 public class Oppgave2{	
+	static int teller=0;
+
 
 	public static void main(String[] args) {			
 
@@ -12,13 +14,15 @@ public class Oppgave2{
 	    
 	    System.out.println("Flytning:");
 	    flytDisk(n, 'A', 'B', 'C');
+	    
+	    System.out.println("Total antall flyttinger : " + teller);
 		    
 	    input.close();
 	}
 	
 	public static void flytDisk(int n, char fraTarn, char tilTarn, char hjelpTarn) {		
 	    if (n == 1){ // Stopping condition
-
+	    	teller++;
 	    	System.out.println("Flyt disk " + n + " fra " + fraTarn + " til " + tilTarn);
 	    	
 	    }	    
@@ -26,7 +30,7 @@ public class Oppgave2{
 	    	flytDisk(n - 1, fraTarn, hjelpTarn, tilTarn);
 	    	System.out.println("Flyt disk " + n + " fra " + fraTarn + " til " + tilTarn);
 	    	flytDisk(n - 1, hjelpTarn, tilTarn, fraTarn);
-
+	    	teller++;
 	    }
 	 }
 }
